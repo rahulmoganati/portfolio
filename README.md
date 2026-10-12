@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Rahul Moganati — Cloud & DevOps Engineer Portfolio
 
 A modern, responsive, performance-optimized personal portfolio website built with HTML5, CSS3, and Vanilla JavaScript. Designed specifically for a Cloud & DevOps Engineer profile, showcasing AWS architectures, Terraform automation, CI/CD pipelines, and systems administration skills.
@@ -70,3 +71,6 @@ Open `http://localhost:8000` in your web browser.
 1. Create an S3 bucket configured for Static Website Hosting.
 2. Upload the `index.html`, `style.css`, `script.js`, and `assets/` directory.
 3. Configure AWS CloudFront distribution for HTTPS and global CDN caching.
+=======
+# portfolio
+>>>>>>> 7ff66dfa017326bb1e824f8fa1ee22dd74b8dd58
