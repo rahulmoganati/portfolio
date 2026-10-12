@@ -1,0 +1,1018 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Rahul Moganati | Cloud Engineer</title>
+    <meta name="description" content="Rahul Moganati's Cloud Engineer portfolio featuring AWS, Terraform, Docker, Kubernetes, Jenkins, Ansible and cloud projects.">
+    <meta name="keywords" content="Rahul Moganati, Cloud Engineer, AWS, Terraform, Docker, Kubernetes, Jenkins, Ansible">
+    <meta name="author" content="Rahul Moganati">
+
+    <meta property="og:title" content="Rahul Moganati | Cloud Engineer">
+    <meta property="og:description" content="Explore cloud engineering projects and technical skills.">
+    <meta property="og:image" content="assets/images/profile.jpg">
+    <meta property="og:type" content="website">
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Redesigned technical skills section styles -->
+    <style>
+        #skills .skills-intro {
+            max-width: 700px;
+            margin: 0 auto;
+            color: var(--text-secondary, #94a3b8);
+            line-height: 1.8;
+        }
+
+        #skills .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 22px;
+            margin-top: 42px;
+        }
+
+        #skills .skill-card {
+            position: relative;
+            overflow: hidden;
+            padding: 26px;
+            border: 1px solid rgba(56, 189, 248, 0.18);
+            border-radius: 18px;
+            background: linear-gradient(
+                145deg,
+                rgba(15, 29, 51, 0.96),
+                rgba(9, 19, 34, 0.98)
+            );
+            transition: transform 0.25s ease, border-color 0.25s ease;
+        }
+
+        #skills .skill-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(56, 189, 248, 0.7);
+        }
+
+        #skills .skill-card-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 22px;
+        }
+
+        #skills .skill-icon {
+            display: grid;
+            place-items: center;
+            width: 48px;
+            height: 48px;
+            flex-shrink: 0;
+            border: 1px solid rgba(56, 189, 248, 0.3);
+            border-radius: 14px;
+            background: rgba(56, 189, 248, 0.1);
+            font-size: 24px;
+        }
+
+        #skills .skill-card-header h3 {
+            margin: 0;
+            font-size: 17px;
+            line-height: 1.5;
+            color: var(--heading-color, #f8fafc);
+        }
+
+        #skills .skill-description {
+            margin: -10px 0 18px;
+            font-size: 13px;
+            line-height: 1.7;
+            color: var(--text-secondary, #94a3b8);
+        }
+
+        #skills .skill-tag-group {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+        }
+
+        #skills .skill-tag {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 11px;
+            border: 1px solid rgba(148, 163, 184, 0.18);
+            border-radius: 8px;
+            background: rgba(148, 163, 184, 0.06);
+            color: var(--text-color, #cbd5e1);
+            font-size: 12px;
+            line-height: 1.4;
+            transition: background 0.2s ease, border-color 0.2s ease;
+        }
+
+        #skills .skill-tag:hover {
+            background: rgba(56, 189, 248, 0.1);
+            border-color: rgba(56, 189, 248, 0.45);
+        }
+
+        #skills .skills-bottom-note {
+            margin-top: 28px;
+            padding: 18px 22px;
+            border-left: 3px solid #38bdf8;
+            border-radius: 8px;
+            background: rgba(56, 189, 248, 0.06);
+            color: var(--text-secondary, #94a3b8);
+            font-size: 14px;
+            line-height: 1.8;
+        }
+
+        #skills .skills-bottom-note strong {
+            color: var(--heading-color, #f8fafc);
+        }
+
+        @media (max-width: 1000px) {
+            #skills .skills-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 600px) {
+            #skills .skills-grid {
+                grid-template-columns: 1fr;
+                gap: 16px;
+                margin-top: 28px;
+            }
+
+            #skills .skill-card {
+                padding: 21px;
+            }
+
+            #skills .skill-tag {
+                font-size: 12px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- NAVIGATION -->
+<header>
+    <div class="container">
+        <nav class="navbar">
+            <a href="#home" class="logo">
+                Rahul<span class="logo-dot">.</span>
+                <span class="logo-badge">Cloud Engineering</span>
+            </a>
+
+            <button class="menu-toggle" id="menuToggle"
+                    aria-label="Toggle navigation menu"
+                    type="button">
+                ☰
+            </button>
+
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#home" class="active">Home</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+                <li>
+                    <a href="#contact" class="nav-cta"
+                       onclick="openResumeModal(); return false;">
+                        View Resume
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- HERO SECTION -->
+<section id="home" class="hero">
+    <div class="container">
+        <div class="hero-grid">
+
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    Hi, I'm <span>Rahul Moganati</span>
+                </h1>
+
+                <div class="hero-role">Cloud Engineer</div>
+
+                <p class="hero-desc">
+                    I work with <strong>AWS Cloud</strong>,
+                    <strong>Terraform</strong>, <strong>Docker</strong>,
+                    <strong>Kubernetes</strong>, <strong>Jenkins</strong>
+                    and <strong>Ansible</strong>. I am interested in cloud
+                    infrastructure, automation, application deployment
+                    and monitoring.
+                </p>
+
+                <div class="hero-actions">
+          
+                    <a href="assets/resume/Rahul_Resume.pdf"
+                       download="Rahul_Moganati_Resume.pdf"
+                       class="btn btn-secondary">
+                        Download PDF
+                    </a>
+
+                    <a href="https://github.com/rahulmoganati"
+                       target="_blank" rel="noopener noreferrer"
+                       class="btn btn-outline">
+                        GitHub
+                    </a>
+
+                    <a href="https://www.linkedin.com/in/rahul-moganati-b02673278/"
+                       target="_blank" rel="noopener noreferrer"
+                       class="btn btn-outline">
+                        LinkedIn
+                    </a>
+                </div>
+
+                <div class="hero-tech-strip">
+                    <span class="tech-strip-label">Core Stack:</span>
+                    <div class="tech-badges">
+                        <span class="tech-badge">AWS Cloud</span>
+                        <span class="tech-badge">Terraform</span>
+                        <span class="tech-badge">Docker</span>
+                        <span class="tech-badge">Kubernetes</span>
+                        <span class="tech-badge">Jenkins</span>
+                        <span class="tech-badge">Ansible</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hero-visual">
+                <div class="profile-wrapper">
+                    <div class="profile-glow"></div>
+                    <div class="profile-card">
+                        <img src="assets/images/profile.jpg"
+                             alt="Rahul Moganati - Cloud Engineer">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- STATS SECTION -->
+<section class="stats-bar">
+    <div class="container">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <h3>2</h3>
+                <p>Internships</p>
+            </div>
+            <div class="stat-item">
+                <h3>2</h3>
+                <p>Featured Projects</p>
+            </div>
+            <div class="stat-item">
+                <h3>15+</h3>
+                <p>Cloud &amp; Technical Tools</p>
+            </div>
+            <div class="stat-item">
+                <h3>AWS</h3>
+                <p>Cloud Infrastructure</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- WORK EXPERIENCE -->
+<section id="experience" class="section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-tag">Career Journey</div>
+            <h2 class="section-title">Work Experience</h2>
+            <p class="section-subtitle">
+                Experience and training in cloud infrastructure,
+                automation, monitoring and business intelligence.
+            </p>
+        </div>
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card">
+                    <div class="timeline-header">
+                        <h3>Multi-Cloud Intern</h3>
+                        <span class="timeline-badge">
+                            May 2026 – November 2026
+                        </span>
+                    </div>
+
+                    <div class="company-name">
+                        <span>🏢</span> VCube Software Solutions
+                    </div>
+
+                    <ul class="timeline-points">
+                        <li>Worked with AWS services including EC2, S3, IAM and RDS.</li>
+                        <li>Practiced infrastructure provisioning using Terraform.</li>
+                        <li>Worked with Jenkins and Docker for application build and deployment practices.</li>
+                        <li>Practiced container orchestration concepts using Kubernetes.</li>
+                        <li>Explored configuration management and automation using Ansible.</li>
+                        <li>Practiced cloud, application and network troubleshooting.</li>
+                    </ul>
+
+                    <div class="timeline-tags">
+                        <span>AWS</span>
+                        <span>Terraform</span>
+                        <span>Docker</span>
+                        <span>Kubernetes</span>
+                        <span>Jenkins</span>
+                        <span>Ansible</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="timeline-item">
+                <div class="timeline-dot"></div>
+                <div class="timeline-card">
+                    <div class="timeline-header">
+                        <h3>Business Intelligence Intern</h3>
+                        <span class="timeline-badge">
+                            January 2024 – March 2024
+                        </span>
+                    </div>
+
+                    <div class="company-name">
+                        <span>📊</span> AICTE / ExcelR Virtual Internship
+                    </div>
+
+                    <ul class="timeline-points">
+                        <li>Analyzed datasets using Excel to identify patterns and support data-driven decisions.</li>
+                        <li>Learned ETL concepts: Extract, Transform and Load data from different sources.</li>
+                        <li>Practiced reporting workflows and data-processing tasks.</li>
+                    </ul>
+
+                    <div class="timeline-tags">
+                        <span>Business Intelligence</span>
+                        <span>Data Analysis</span>
+                        <span>ETL</span>
+                        <span>Excel</span>
+                        <span>SQL</span>
+                        <span>Reporting</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- REDESIGNED TECHNICAL SKILLS SECTION -->
+<section id="skills" class="section">
+    <div class="container">
+
+        <div class="section-header">
+            <div class="section-tag">My Technical Stack</div>
+            <h2 class="section-title">Technical Skills</h2>
+            <p class="skills-intro">
+                My cloud engineering toolkit covers infrastructure,
+                automation, Linux administration, networking,
+                scripting and monitoring.
+            </p>
+        </div>
+
+        <div class="skills-grid">
+
+            <!-- CLOUD PLATFORM -->
+            <article class="skill-card">
+                <div class="skill-card-header">
+                    <div class="skill-icon">☁️</div>
+                    <h3>Cloud Platform</h3>
+                </div>
+                <p class="skill-description">
+                    Cloud compute, storage, networking and access management.
+                </p>
+                <div class="skill-tag-group">
+                    <span class="skill-tag">AWS EC2</span>
+                    <span class="skill-tag">Amazon S3</span>
+                    <span class="skill-tag">AWS IAM</span>
+                    <span class="skill-tag">Amazon VPC</span>
+                    <span class="skill-tag">Amazon RDS</span>
+                    <span class="skill-tag">Load Balancer</span>
+                    <span class="skill-tag">Auto Scaling</span>
+                    <span class="skill-tag">Amazon EBS</span>
+                    <span class="skill-tag">Amazon EFS</span>
+                    <span class="skill-tag">Route 53</span>
+                </div>
+            </article>
+
+            <!-- INFRASTRUCTURE AS CODE -->
+            <article class="skill-card">
+                <div class="skill-card-header">
+                    <div class="skill-icon">🏗️</div>
+                    <h3>Infrastructure as Code</h3>
+                </div>
+                <p class="skill-description">
+                    Define and provision repeatable cloud infrastructure.
+                </p>
+                <div class="skill-tag-group">
+                    <span class="skill-tag">Terraform</span>
+                    <span class="skill-tag">Providers</span>
+                    <span class="skill-tag">Resources</span>
+                    <span class="skill-tag">Variables</span>
+                    <span class="skill-tag">Modules</span>
+                    <span class="skill-tag">State Management</span>
+                </div>
+            </article>
+
+            <!-- CONTAINERS AND ORCHESTRATION -->
+            <article class="skill-card">
+                <div class="skill-card-header">
+                    <div class="skill-icon">📦</div>
+                    <h3>Containers &amp; Orchestration</h3>
+                </div>
+                <p class="skill-description">
+                    Package applications and manage container workloads.
+                </p>
+                <div class="skill-tag-group">
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">Docker Images</span>
+                    <span class="skill-tag">Docker Compose</span>
+                    <span class="skill-tag">Docker Networking</span>
+                    <span class="skill-tag">Kubernetes</span>
+                    <span class="skill-tag">Pods</span>
+                    <span class="skill-tag">Deployments</span>
+                    <span class="skill-tag">Services</span>
+                </div>
+            </article>
+
+            <!-- CI/CD AND AUTOMATION -->
+            <article class="skill-card">
+                <div class="skill-card-header">
+                    <div class="skill-icon">⚙️</div>
+                    <h3>CI/CD &amp; Automation</h3>
+                </div>
+                <p class="skill-description">
+                    Automate build, deployment and configuration tasks.
+                </p>
+                <div class="skill-tag-group">
+                    <span class="skill-tag">Jenkins</span>
+                    <span class="skill-tag">Jenkins Pipelines</span>
+                    <span class="skill-tag">Ansible</span>
+                    <span class="skill-tag">Playbooks</span>
+                    <span class="skill-tag">Inventory</span>
+                    <span class="skill-tag">Git</span>
+                    <span class="skill-tag">GitHub</span>
+                </div>
+            </article>
+
+            <!-- LINUX ADMINISTRATION -->
+            <article class="skill-card">
+                <div class="skill-card-header">
+                    <div class="skill-icon">🐧</div>
+                    <h3>Linux Administration</h3>
+                </div>
+                <p class="skill-description">
+                    Manage Linux systems, services, users and processes.
+                </p>
+                <div class="skill-tag-group">
+                    <span class="skill-tag">Linux Commands</span>
+                    <span class="skill-tag">User Management</span>
+                    <span class="skill-tag">File Permissions</span>
+                    <span class="skill-tag">systemd</span>
+                    <span class="skill-tag">Process Management</span>
+                    <span class="skill-tag">Package Management</span>
+                    <span class="skill-tag">Bash Scripting</span>
+                    <span class="skill-tag">SSH</span>
+                </div>
+            </article>
+
+            <!-- NETWORKING -->
+            <article class="skill-card">
+                <div class="skill-card-header">
+                    <div class="skill-icon">🌐</div>
+                    <h3>Networking</h3>
+                </div>
+                <p class="skill-description">
+                    Understand connectivity, traffic flow and access control.
+                </p>
+                <div class="skill-tag-group">
+                    <span class="skill-tag">TCP/IP</span>
+                    <span class="skill-tag">DNS</span>
+                    <span class="skill-tag">HTTP / HTTPS</span>
+                    <span class="skill-tag">Ports</span>
+                    <span class="skill-tag">Subnetting</span>
+                    <span class="skill-tag">Security Groups</span>
+                    <span class="skill-tag">Route Tables</span>
+                    <span class="skill-tag">Load Balancing</span>
+                </div>
+            </article>
+
+            <!-- PROGRAMMING -->
+            <article class="skill-card">
+                <div class="skill-card-header">
+                    <div class="skill-icon">💻</div>
+                    <h3>Programming &amp; Data</h3>
+                </div>
+                <p class="skill-description">
+                    Scripting, data queries and configuration formats.
+                </p>
+                <div class="skill-tag-group">
+                    <span class="skill-tag">Python</span>
+                    <span class="skill-tag">SQL</span>
+                    <span class="skill-tag">YAML</span>
+                    <span class="skill-tag">JSON</span>
+                    <span class="skill-tag">HTML</span>
+                    <span class="skill-tag">CSS</span>
+                </div>
+            </article>
+
+            <!-- MONITORING -->
+            <article class="skill-card">
+                <div class="skill-card-header">
+                    <div class="skill-icon">📊</div>
+                    <h3>Monitoring &amp; Observability</h3>
+                </div>
+                <p class="skill-description">
+                    Observe infrastructure health and application metrics.
+                </p>
+                <div class="skill-tag-group">
+                    <span class="skill-tag">Prometheus</span>
+                    <span class="skill-tag">Grafana</span>
+                    <span class="skill-tag">Amazon CloudWatch</span>
+                    <span class="skill-tag">Metrics</span>
+                    <span class="skill-tag">Dashboards</span>
+                    <span class="skill-tag">Alerting</span>
+                </div>
+            </article>
+
+            <!-- APPLICATION HOSTING -->
+            <article class="skill-card">
+                <div class="skill-card-header">
+                    <div class="skill-icon">🚀</div>
+                    <h3>Application Hosting</h3>
+                </div>
+                <p class="skill-description">
+                    Run and expose web applications on cloud infrastructure.
+                </p>
+                <div class="skill-tag-group">
+                    <span class="skill-tag">Nginx</span>
+                    <span class="skill-tag">Gunicorn</span>
+                    <span class="skill-tag">Flask</span>
+                    <span class="skill-tag">AWS EC2</span>
+                    <span class="skill-tag">SQLite</span>
+                    <span class="skill-tag">Application Troubleshooting</span>
+                </div>
+            </article>
+
+        </div>
+
+        <div class="skills-bottom-note">
+            <strong>Practical focus:</strong>
+            Cloud infrastructure provisioning, Linux troubleshooting,
+            containerization, application hosting and deployment automation.
+        </div>
+
+    </div>
+</section>
+<!-- PROJECTS SECTION -->
+<section id="projects" class="section">
+    <div class="container">
+        <div class="section-header">
+            <div class="section-tag">Featured Work</div>
+            <h2 class="section-title">Cloud Engineering Projects</h2>
+            <p class="section-subtitle">
+                Cloud architecture, infrastructure automation,
+                application deployment and hosting projects.
+            </p>
+        </div>
+
+        <div class="project-grid">
+
+            <!-- PROJECT 1: MULTI-TIER ARCHITECTURE -->
+            <article class="project-card">
+                <div class="project-preview">
+                    <svg viewBox="0 0 600 300"
+                         xmlns="http://www.w3.org/2000/svg"
+                         width="100%">
+                        <rect width="600" height="300" rx="10"
+                              fill="#091322"/>
+
+                        <rect x="25" y="85" width="165" height="100"
+                              rx="10" fill="#0f1d33"
+                              stroke="#38bdf8" stroke-width="2"/>
+                        <text x="107" y="120" fill="#38bdf8"
+                              font-size="16" text-anchor="middle">
+                            WEB TIER
+                        </text>
+                        <text x="107" y="150" fill="#ffffff"
+                              font-size="15" text-anchor="middle">
+                            ALB / NGINX
+                        </text>
+
+                        <path d="M190 135 H220"
+                              stroke="#38bdf8" stroke-width="3"/>
+
+                        <rect x="220" y="85" width="165" height="100"
+                              rx="10" fill="#0f1d33"
+                              stroke="#38bdf8" stroke-width="2"/>
+                        <text x="302" y="120" fill="#38bdf8"
+                              font-size="14" text-anchor="middle">
+                            APPLICATION TIER
+                        </text>
+                        <text x="302" y="150" fill="#ffffff"
+                              font-size="15" text-anchor="middle">
+                            EC2 / Docker
+                        </text>
+
+                        <path d="M385 135 H415"
+                              stroke="#38bdf8" stroke-width="3"/>
+
+                        <rect x="415" y="85" width="165" height="100"
+                              rx="10" fill="#0f1d33"
+                              stroke="#38bdf8" stroke-width="2"/>
+                        <text x="497" y="120" fill="#38bdf8"
+                              font-size="14" text-anchor="middle">
+                            DATABASE TIER
+                        </text>
+                        <text x="497" y="150" fill="#ffffff"
+                              font-size="15" text-anchor="middle">
+                            AWS RDS
+                        </text>
+                    </svg>
+                </div>
+
+                <div class="project-content">
+                    <span class="project-category">
+                        AWS Cloud • Infrastructure
+                    </span>
+                    <h3>Multi-Tier Architecture</h3>
+                    <p>
+                        Designed a multi-tier cloud architecture separating
+                        the web, application and database layers. Explored
+                        AWS services, infrastructure provisioning,
+                        scalability and deployment.
+                    </p>
+                    <div class="project-tags">
+                        <span>AWS</span>
+                        <span>EC2</span>
+                        <span>RDS</span>
+                        <span>Terraform</span>
+                        <span>Load Balancer</span>
+                    </div>
+                    <a href="https://github.com/rahulmoganati/AWS_3tier_infra"
+                       target="_blank" rel="noopener noreferrer"
+                       class="project-link">
+                        View Project →
+                    </a>
+                </div>
+            </article>
+
+            <!-- PROJECT 2: AQUA MEDICINES -->
+            <article class="project-card">
+                <div class="project-preview">
+                    <svg viewBox="0 0 600 300"
+                         xmlns="http://www.w3.org/2000/svg"
+                         width="100%">
+                        <rect width="600" height="300" rx="10"
+                              fill="#091322"/>
+                        <rect x="60" y="40" width="480" height="220"
+                              rx="12" fill="#0f1d33"
+                              stroke="#38bdf8" stroke-width="2"/>
+
+                        <text x="300" y="85" fill="#38bdf8"
+                              font-size="27" font-weight="bold"
+                              text-anchor="middle">
+                            AQUA MEDICINES
+                        </text>
+                        <text x="300" y="120" fill="#ffffff"
+                              font-size="16" text-anchor="middle">
+                            Flask Web Application
+                        </text>
+
+                        <rect x="95" y="150" width="120" height="65"
+                              rx="8" fill="#091322"
+                              stroke="#38bdf8"/>
+                        <text x="155" y="177" fill="#ffffff"
+                              font-size="13" text-anchor="middle">
+                            Products
+                        </text>
+                        <text x="155" y="197" fill="#38bdf8"
+                              font-size="12" text-anchor="middle">
+                            Catalog
+                        </text>
+
+                        <rect x="240" y="150" width="120" height="65"
+                              rx="8" fill="#091322"
+                              stroke="#38bdf8"/>
+                        <text x="300" y="177" fill="#ffffff"
+                              font-size="13" text-anchor="middle">
+                            Shopping
+                        </text>
+                        <text x="300" y="197" fill="#38bdf8"
+                              font-size="12" text-anchor="middle">
+                            Cart
+                        </text>
+
+                        <rect x="385" y="150" width="120" height="65"
+                              rx="8" fill="#091322"
+                              stroke="#38bdf8"/>
+                        <text x="445" y="177" fill="#ffffff"
+                              font-size="13" text-anchor="middle">
+                            Orders
+                        </text>
+                        <text x="445" y="197" fill="#38bdf8"
+                              font-size="12" text-anchor="middle">
+                            Checkout
+                        </text>
+                    </svg>
+                </div>
+
+                <div class="project-content">
+                    <span class="project-category">
+                        Python • Flask • Web Application
+                    </span>
+                    <h3>Aqua Medicines</h3>
+                    <p>
+                        Developed a Flask-based web application for browsing
+                        aquatic medicines and products, with registration,
+                        login, product pages, a shopping cart, checkout,
+                        order history and administration.
+                    </p>
+                    <div class="project-tags">
+                        <span>Python</span>
+                        <span>Flask</span>
+                        <span>SQLite</span>
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>Gunicorn</span>
+                        <span>AWS EC2</span>
+                    </div>
+                    <a href="https://github.com/rahulmoganati/aqua-medicines"
+                       target="_blank" rel="noopener noreferrer"
+                       class="project-link">
+                        View Project →
+                    </a>
+                </div>
+            </article>
+
+        </div>
+    </div>
+</section>
+
+<!-- EDUCATION AND CERTIFICATIONS -->
+<section id="education" class="section">
+    <div class="container">
+
+        <div class="section-header">
+            <div class="section-tag">Credentials</div>
+            <h2 class="section-title">Education &amp; Certifications</h2>
+            <p class="section-subtitle">
+                Academic background and professional training.
+            </p>
+        </div>
+
+        <div class="edu-cert-grid">
+
+            <div class="edu-column">
+                <h3 class="column-title">
+                    <span>🎓</span> Academic Background
+                </h3>
+
+                <div class="edu-card">
+                    <span class="date-badge">2022 – 2025</span>
+                    <h3>B.Tech in Electrical &amp; Electronics Engineering</h3>
+                    <h4>
+                        Ramachandra College of Engineering
+                        (Affiliated to JNTUK)
+                    </h4>
+                    <p>
+                        <strong>CGPA: 7.58</strong> |
+                        Studied electrical systems, engineering fundamentals
+                        and computing technologies.
+                    </p>
+                </div>
+            </div>
+
+            <div class="cert-column">
+                <h3 class="column-title">
+                    <span>📜</span> Certifications &amp; Training
+                </h3>
+
+                <div class="cert-card">
+                    <span class="cert-issuer">VCube Software Solutions</span>
+                    <h3>Multi-Cloud Intensive Training</h3>
+                    <p>
+                        Training in AWS, Linux administration, Docker,
+                        Kubernetes, Jenkins, Terraform and automation.
+                    </p>
+                </div>
+
+                <div class="cert-card">
+                    <span class="cert-issuer">Vihan Electrical</span>
+                    <h3>Electric Vehicle (EV) Training</h3>
+                    <p>
+                        Training related to electric vehicle technology
+                        and electrical systems.
+                    </p>
+                </div>
+
+                <div class="cert-card">
+                    <span class="cert-issuer">Business Intelligence</span>
+                    <h3>Business Intelligence Certificate</h3>
+                    <p>
+                        Training in business intelligence concepts,
+                        data analysis, reporting and presenting insights
+                        to support business decisions.
+                    </p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT SECTION -->
+<section id="about" class="section">
+    <div class="container">
+
+        <div class="section-header">
+            <div class="section-tag">Background</div>
+            <h2 class="section-title">About Me</h2>
+        </div>
+
+        <div class="about-card">
+            <p>
+                I am a Cloud Engineer focused on designing, automating
+                and maintaining reliable cloud systems. My technical
+                interests include AWS, Terraform, Docker, Kubernetes,
+                Jenkins and Ansible.
+            </p>
+
+            <p>
+                I have worked on a multi-tier AWS infrastructure project
+                and a Flask-based Aqua Medicines web application. I am
+                interested in infrastructure provisioning, application
+                deployment, Linux administration and monitoring.
+            </p>
+
+            <p>
+                Beyond technology, I enjoy playing cricket, learning
+                new technologies and listening to music.
+            </p>
+
+            <div class="about-highlights">
+                <div class="about-highlight-item">
+                    <h4>Automation Focus</h4>
+                    <p>Practicing repeatable infrastructure provisioning and deployments.</p>
+                </div>
+
+                <div class="about-highlight-item">
+                    <h4>Continuous Learning</h4>
+                    <p>Developing skills in cloud and deployment technologies.</p>
+                </div>
+
+                <div class="about-highlight-item">
+                    <h4>Problem Solving</h4>
+                    <p>Practicing application, infrastructure and network troubleshooting.</p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contact" class="section">
+    <div class="container">
+
+        <div class="contact-wrapper">
+            <div class="section-tag">Get in Touch</div>
+            <h3>Let's Build Something Great Together</h3>
+
+            <p>
+                I am interested in opportunities as a Cloud Engineer
+                or Linux System Administrator. Feel free to contact me.
+            </p>
+
+            <div class="contact-pills">
+
+                <div class="contact-pill"
+                     onclick="copyToClipboard('moganatirahul08@gmail.com', 'Email copied to clipboard!')">
+                    <span>✉️</span>
+                    <span>moganatirahul08@gmail.com</span>
+                    <span style="font-size:11px;color:#38bdf8;margin-left:4px;">
+                        (Click to Copy)
+                    </span>
+                </div>
+
+                <a href="tel:+919392631489" class="contact-pill">
+                    <span>📞</span>
+                    <span>+91 93926 31489</span>
+                </a>
+
+                <div class="contact-pill" style="cursor:default;">
+                    <span>📍</span>
+                    <span>Eluru, Andhra Pradesh, India</span>
+                </div>
+
+                <a href="https://www.linkedin.com/in/rahul-moganati-b02673278/"
+                   target="_blank" rel="noopener noreferrer"
+                   class="contact-pill">
+                    LinkedIn Profile
+                </a>
+
+                <a href="https://github.com/rahulmoganati"
+                   target="_blank" rel="noopener noreferrer"
+                   class="contact-pill">
+                    GitHub Profile
+                </a>
+
+            </div>
+
+            <div class="contact-actions">
+                <button onclick="openResumeModal()"
+                        class="btn btn-primary">
+                    View Full Resume
+                </button>
+
+                <a href="assets/resume/Rahul_Resume.pdf"
+                   download="Rahul_Moganati_Resume.pdf"
+                   class="btn btn-secondary">
+                    Download PDF Resume
+                </a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<!-- RESUME MODAL -->
+<div class="modal-overlay" id="resumeModal"
+     onclick="closeResumeModalOnOutside(event)">
+
+    <div class="modal-container">
+        <div class="modal-header">
+            <h3>Rahul Moganati — Official Resume</h3>
+
+            <div class="modal-actions">
+                <a href="assets/resume/Rahul_Resume.pdf"
+                   target="_blank" rel="noopener noreferrer"
+                   class="btn btn-secondary"
+                   style="padding:6px 14px;font-size:13px;">
+                    Open Tab ↗
+                </a>
+
+                <a href="assets/resume/Rahul_Resume.pdf"
+                   download="Rahul_Moganati_Resume.pdf"
+                   class="btn btn-primary"
+                   style="padding:6px 14px;font-size:13px;">
+                    Download ⤓
+                </a>
+
+                <button class="modal-close-btn"
+                        onclick="closeResumeModal()"
+                        aria-label="Close Resume Modal"
+                        type="button">
+                    &times;
+                </button>
+            </div>
+        </div>
+
+        <div class="modal-body">
+            <iframe src="assets/resume/Rahul_Resume.pdf#toolbar=1"
+                    title="Rahul Moganati Resume PDF">
+            </iframe>
+        </div>
+    </div>
+</div>
+
+<!-- TOAST NOTIFICATION -->
+<div class="toast" id="toastNotification">
+    Copied to clipboard!
+</div>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <div class="footer-content">
+
+            <div class="footer-text">
+                © 2026 Rahul Moganati • Designed for Cloud Engineering
+            </div>
+
+            <div class="footer-links">
+                <a href="#home">Back to Top ↑</a>
+
+                <a href="https://github.com/rahulmoganati"
+                   target="_blank" rel="noopener noreferrer">
+                    GitHub
+                </a>
+
+                <a href="https://www.linkedin.com/in/rahul-moganati-b02673278/"
+                   target="_blank" rel="noopener noreferrer">
+                    LinkedIn
+                </a>
+            </div>
+
+        </div>
+    </div>
+</footer>
+
+<script src="script.js"></script>
+
+</body>
+</html>
